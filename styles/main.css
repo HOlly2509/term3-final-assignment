@@ -31,23 +31,26 @@ button{
     border: none;
    border-radius:8px ;
    padding: 16px 20px;
-   background: #18382B;
+   background: #3C90CF;
    font-family: 'Lato', sans-serif; 
     font-size: 16px;
     color: white;
 }
 
 .hero-image{
-    height: 90vh;
-    position: relative;
-    bottom: -100px;
+    height: 50vh;
+    margin-bottom: 200px;
+ 
 }
 
 /* Bootstrap component overrides */
 /* carousel */
 
 .carousel-item{
-    background-color: #E6F2E9;
+    background-color: #CADEED;
+    background-image:url(../assets/image1.webp);
+    background-blend-mode: screen;
+
 }
 
 .carousel-control-next, .carousel-control-prev{
@@ -69,10 +72,10 @@ button{
 
 .card{
     border-radius: 150px 150px 12px 12px;
-    background: #f3f3f3;
+    background: #CADEED;
     border: none;
     text-align: center;
-    height: 440px;
+    height: 400px;
 
 }
 
@@ -85,6 +88,8 @@ button{
 
 .card-img-top.small{
     height: 200px;
+    border-radius: 150px 150px 12px 12px;
+    margin-top: 30px ;
 }
 
 .card-text {
@@ -107,10 +112,15 @@ button{
 
 .accordion{
     width: auto;
-    height: 200px;
+    height: auto;
+    margin-left: 10px;
 }
 
 .image1{
     width: 50px;
     height: 100px;
+}
+
+.trips{
+    background-color:  #72a3c9;
 }

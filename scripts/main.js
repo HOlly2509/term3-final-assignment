@@ -29,3 +29,24 @@ $(".card").click(function() {
 })
 
 
+function loadCruises(cruisesToShow) {
+
+    $("#cruiseContainer").empty();
+
+//loop throught the list of plants
+for (let i = 0; i < cruisesToShow.length; i++) {
+    const cruise = cruisesToShow[i];
+
+
+
+    // 1: select the plants containter and add the current array plant to it
+    $("#cruiseContainer").append($("#cruiseCardTemplate").html())
+
+    // 2: create a variable that contains the most recently added plant card
+    let currentChild = $("#cruiseContainer").children().eq(i)
+
+    //3: set the content for the current plant card from the plants list array
+    $(currentChild).find("nameText").text("Hello");
+
+}
+}
