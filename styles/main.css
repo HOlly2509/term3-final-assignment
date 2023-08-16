@@ -76,6 +76,8 @@ button{
     border: none;
     text-align: center;
     height: 400px;
+    float: left;
+    margin-top: 100px;
 
 }
 
