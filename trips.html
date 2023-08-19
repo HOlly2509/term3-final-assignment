@@ -8,8 +8,13 @@
     <!-- styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="styles/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/main.js"></script>
+
   </head>
   <body class="trips">
+
+    <h1 class="name">SeaScapes</h1>
 
 
     <!-- Nav Bar -->
@@ -17,7 +22,7 @@
       <div class="container-fluid">
 
         <!-- logo -->
-        <a class="navbar-brand" href="#">
+        <a class="logo" href="#">
           <img src="assets/logo.png" alt="logo" height="140">
         </a>
 
@@ -39,50 +44,83 @@
 <div class="container mt-5 pt-5" >
 
     <!-- header -->
-<h2>Borwse Trips</h2>
+<h2>Browse Trips</h2>
+
+<!-- filter radio buttons -->
+<div class="row">
+  <div class="btn-group col-auto" role="group" aria-label="Basic radio toggle button group">
+    <input type="radio" class="btn-check filterRadio" name="filterRadio" value="all" autocomplete="off" checked>
+    <label class="btn btn-outline-success" for="allPlantsFilter">All destinations</label>
+  
+    <input type="radio" class="btn-check filterRadio" name="filterRadio" value="short" autocomplete="off">
+    <label class="btn btn-outline-success" for="shortLightFilter"><i class="bi bi-brightness-high"></i>Short durations trips</label>
+  
+    <!-- Add more filter options as needed -->
+  </div>
+
+  <div class="btn-group col-auto" role="group" aria-label="Basic radio toggle button group">
+    <input type="radio" class="btn-check sortRadio" name="sortRadio" value="date" autocomplete="off" checked>
+    <label class="btn btn-outline-secondary" for="defaultSort"><i class="bi bi-calendar4"></i>Newest to oldest</label>
+  
+    <input type="radio" class="btn-check sortRadio" name="sortRadio" value="price" autocomplete="off">
+    <label class="btn btn-outline-secondary" for="priceSort"><i class="bi bi-sort-down-alt"></i>Low to high price</label>
+  </div>
+</div>
+
+
 
 <!-- cruise list cards -->
 <div class="row pt-5" id="cruiseContainer">
-    <div class="col-4">
+  <div class="col-12 card-row">
+
+
+
 <!-- card -->
 
 <div class="card">
-    <img src="assets/image1.webp" class="card-img-top small" alt="...">
+  <img src="assets/image1.webp" class="card-img-top small" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Polar odyssey</h5>
+    <p class="card-text" id="pricetext">R15 000</p>
+    <p class="card-text" id="descriptiontext"><strong>4 Nights</strong>  <br>
+      perfect getaway for those who want to learn while they relax!</p>
+    <button class="button-class">Purchase ticket</button>
+  </div>
+</div>
+
+
+
+
+  <div class="card">
+    <img src="assets/safari.jpeg" class="card-img-top small" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Polar odyssey</h5>
-      <p class="card-text" id="pricetext">R15 000</p>
-      <p class="card-text" id="descriptiontext"><strong>4 Nights</strong> 
-        perfect getaway for those who want to learn while they relax!</p>
+      <h5 class="card-title">Frozen safari</h5>
+      <p class="card-text" id="pricetext">R20 000</p>
+      <p class="card-text" id="descriptiontext"><strong>6 Nights</strong> <br>
+        As exciting as it sounds, if you like adventure this is the one for you! Going to multiple loactions!</p>
+        <button class="button-class"> Purchase ticket </button>
     </div>
   </div>
 
   <div class="card">
-    <img src="assets/image1.webp" class="card-img-top small" alt="...">
+    <img src="assets/2 day.jpeg" class="card-img-top small" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Polar odyssey</h5>
-      <p class="card-text" id="pricetext">R15 000</p>
-      <p class="card-text" id="descriptiontext"><strong>4 Nights</strong> 
-        perfect getaway for those who want to learn while they relax!</p>
+      <h5 class="card-title">Antarctic adventure</h5>
+      <p class="card-text" id="pricetext">R10 000</p>
+      <p class="card-text" id="descriptiontext"><strong>2 Nights</strong>  <br>
+        short and sweet, the most comfortable way to see the antarctic</p>
+        <button class="button-class"> Purchase ticket</button>
     </div>
   </div>
 
   <div class="card">
-    <img src="assets/image1.webp" class="card-img-top small" alt="...">
+    <img src="assets/ice.jpeg" class="card-img-top small" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Polar odyssey</h5>
-      <p class="card-text" id="pricetext">R15 000</p>
-      <p class="card-text" id="descriptiontext"><strong>4 Nights</strong> 
-        perfect getaway for those who want to learn while they relax!</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="assets/image1.webp" class="card-img-top small" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Polar odyssey</h5>
-      <p class="card-text" id="pricetext">R15 000</p>
-      <p class="card-text" id="descriptiontext"><strong>4 Nights</strong> 
-        perfect getaway for those who want to learn while they relax!</p>
+      <h5 class="card-title">Ice explorer</h5>
+      <p class="card-text" id="pricetext">R30 000</p>
+      <p class="card-text" id="descriptiontext" ><strong>8 Nights</strong>  <br>
+        Want to see the antarctic up close? Become the ultimate explorer on this 8-day adventure to multiple destinations on the way</p>
+        <button class="button-class" > Purchase ticket</button>
     </div>
   </div>
 

@@ -27,6 +27,24 @@ p{
 /* --------------------------- */
 /* Components */
 
+.name{
+    margin-left: 700px;
+    margin-bottom: -100px;
+    padding-top: 50px;
+}
+
+.logo{
+    margin-left: 600px;
+}
+
+.accordion{
+    width: auto;
+    height: auto;
+    margin-left: 10px;
+    float: left;
+    margin-top: -100px;
+}
+
 button{
     border: none;
    border-radius:8px ;
@@ -78,7 +96,15 @@ button{
     height: 400px;
     float: left;
     margin-top: 100px;
+    width: 500px;
+    margin-bottom: 20px;
 
+}
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .card-img-top{
@@ -112,11 +138,7 @@ button{
     border-bottom: 2px solid #18382B;
 }
 
-.accordion{
-    width: auto;
-    height: auto;
-    margin-left: 10px;
-}
+
 
 .image1{
     width: 50px;
@@ -125,4 +147,22 @@ button{
 
 .trips{
     background-color:  #72a3c9;
+}
+
+#descriptiontext,
+.button-class {
+    display: none;
+}
+
+
+.weather-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 250px;
+    height: 200px;
+    background-color: #72a3c9 ;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    margin-top: 300px;
 }
