@@ -1,12 +1,13 @@
-const arrDestinations = [
-    {
+const arrDestinations = [{
+
         name: "Polar Odyssey",
         price: "15 000",
         description: "4 Nights, perfect getaway for those who want to learn while they relax! ",
         image: "image1.webp",
         addedDate: "2023-03-25",
         destinations: "single",
-        origin: "Antarctica"
+        origin: "Antarctica",
+        duration: "short"
     },
     {
         name: "Frozen Safari",
@@ -24,7 +25,8 @@ const arrDestinations = [
         image: "2 day.jpeg",
         addedDate: "2023-07-20",
         destinations: "single",
-        origin: "Antarctica"
+        origin: "Antarctica",
+        duration: "short"
     },
     {
         name: "Ice Explorer",
@@ -40,7 +42,7 @@ const arrDestinations = [
 let appliedFilter = "all"; // Default to "all" destinations
 let appliedSort = "date";  // Default to sorting by date added
 
-// Function to render the destination cards based on appliedFilter and appliedSort
+
 function renderCards() {
     const cardsContainer = $("#cruiseContainer");
     cardsContainer.empty();
@@ -80,6 +82,23 @@ $(".sortRadio").click(function() {
 // Initial render
 $(document).ready(function() {
     renderCards();
+
+    // Click event for filter buttons
+$(".filterRadio").click(function() {
+    console.log("Filter button clicked");
+    appliedFilter = $(this).val();
+    console.log("Applied filter:", appliedFilter);
+    renderCards();
+});
+
+// Click event for sort buttons
+$(".sortRadio").click(function() {
+    console.log("Sort button clicked");
+    appliedSort = $(this).val();
+    console.log("Applied sort:", appliedSort);
+    renderCards();
+});
+
 });
 
 
@@ -145,17 +164,25 @@ for (let i = 0; i < cruisesToShow.length; i++) {
 
 
 //PURCHASES TABLE//
-$("#removeone").click(function(){
-    $("#one").hide();
-})
-
-$("#removetwo").click(function(){
-    $("#two").hide();
-})
-
-$("#removethree").click(function(){
-    $("#three").hide();
-})
+$(document).ready(function() {
+    // Add click event listeners to the individual remove buttons
+    $("#removeone").click(function() {
+      $("#one").hide();
+    });
+  
+    $("#removetwo").click(function() {
+      $("#two").hide();
+    });
+  
+    $("#removethree").click(function() {
+      $("#three").hide();
+    });
+  
+    // Add click event listener to the "Remove All" button
+    $("#removeAll").click(function() {
+      $("tr").hide(); // Hide all table rows
+    });
+  });
 //------------------------------//
 
 
@@ -176,67 +203,9 @@ $(document).ready(function(){
     });
 });
 
-// $(document).ready(function(){
-//     $ajax({
-//         type:"GET",
-//         url:"https://api.openweathermap.org/data/2.5/weather?q=Pretoria&appid=a4754813252c3de29072269c15c91406",
-//         success: function(data){
-//         temp = data;
-//         console.log(temp);
-//         }
-//     })
-// })
-//---------------------//
 
 
-//FILTER & SORT CRUISES//
 
-filterSortCruises()
-
-$("#descriptiontext").hide();
-loadCruises(arrDestinations);
-
-    
-
-
-$(document).ready(function() {
-    $(".filterRadio").click(function() {
-        var filterValue = $(this).val();
-        
-        $(".card").each(function() {
-            var card = $(this);
-            var description = card.find("#descriptiontext");
-            
-            if (filterValue === "all" || description.data("filter") === filterValue) {
-                card.show();
-            } else {
-                card.hide();
-            }
-        });
-    });
-
-    $(".sortRadio").click(function() {
-        var sortValue = $(this).val();
-        
-        var cardsContainer = $("#cruiseContainer");
-        var cards = cardsContainer.find(".card").toArray();
-        
-        cards.sort(function(a, b) {
-            var aValue = $(a).find("#pricetext").text().replace("R", "");
-            var bValue = $(b).find("#pricetext").text().replace("R", "");
-            
-            if (sortValue === "date") {
-                // For sorting by date, you would use appropriate criteria here
-                // For simplicity, let's just compare the price values
-                return aValue - bValue;
-            } else if (sortValue === "price") {
-                return aValue - bValue;
-            }
-        });
-
-        cardsContainer.empty().append(cards);
-    });
-});
 //-----------------------------------------------------//
 
 

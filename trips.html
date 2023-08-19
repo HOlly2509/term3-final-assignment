@@ -49,20 +49,20 @@
 <!-- filter radio buttons -->
 <div class="row">
   <div class="btn-group col-auto" role="group" aria-label="Basic radio toggle button group">
-    <input type="radio" class="btn-check filterRadio" name="filterRadio" value="all" autocomplete="off" checked>
-    <label class="btn btn-outline-success" for="allPlantsFilter">All destinations</label>
+    <input type="radio" class="btn-check filterRadio" name="filterRadio" id="allDestinationsFilter" value="all" autocomplete="off" checked>
+    <label class="btn btn-outline-success" for="allDestinationsFilter">All destinations</label>
   
-    <input type="radio" class="btn-check filterRadio" name="filterRadio" value="short" autocomplete="off">
-    <label class="btn btn-outline-success" for="shortLightFilter"><i class="bi bi-brightness-high"></i>Short durations trips</label>
+    <input type="radio" class="btn-check filterRadio" name="filterRadio" id="shortFilter" value="short" autocomplete="off">
+    <label class="btn btn-outline-success" for="shortFilter"><i class="bi bi-brightness-high"></i>Short durations trips</label>
   
     <!-- Add more filter options as needed -->
   </div>
 
   <div class="btn-group col-auto" role="group" aria-label="Basic radio toggle button group">
-    <input type="radio" class="btn-check sortRadio" name="sortRadio" value="date" autocomplete="off" checked>
+    <input type="radio" class="btn-check sortRadio" name="sortRadio" id="defaultSort" value="date" autocomplete="off" checked>
     <label class="btn btn-outline-secondary" for="defaultSort"><i class="bi bi-calendar4"></i>Newest to oldest</label>
   
-    <input type="radio" class="btn-check sortRadio" name="sortRadio" value="price" autocomplete="off">
+    <input type="radio" class="btn-check sortRadio" name="sortRadio" id="priceSort" value="price" autocomplete="off">
     <label class="btn btn-outline-secondary" for="priceSort"><i class="bi bi-sort-down-alt"></i>Low to high price</label>
   </div>
 </div>
@@ -98,7 +98,7 @@
       <p class="card-text" id="pricetext">R20 000</p>
       <p class="card-text" id="descriptiontext"><strong>6 Nights</strong> <br>
         As exciting as it sounds, if you like adventure this is the one for you! Going to multiple loactions!</p>
-        <button class="button-class"> Purchase ticket </button>
+        <button class="button-class">Your purchases</button>
     </div>
   </div>
 
