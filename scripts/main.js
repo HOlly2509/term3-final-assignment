@@ -7,7 +7,9 @@ const arrDestinations = [{
         addedDate: "2023-03-25",
         destinations: "single",
         origin: "Antarctica",
-        duration: "short"
+        duration: "short",
+        code:"#6266",
+        ticketQuantity:"1"
     },
     {
         name: "Frozen Safari",
@@ -16,7 +18,9 @@ const arrDestinations = [{
         image: "safari.jpeg",
         addedDate: "2023-05-26",
         destinations: "multiple",
-        origin: "Antarctica"
+        origin: "Antarctica",
+        code:"#6256",
+        ticketQuantity:"1"
     },
     {
         name: "Antarctic Adventure",
@@ -26,7 +30,9 @@ const arrDestinations = [{
         addedDate: "2023-07-20",
         destinations: "single",
         origin: "Antarctica",
-        duration: "short"
+        duration: "short",
+        code:"#6296",
+        ticketQuantity:"1"
     },
     {
         name: "Ice Explorer",
@@ -35,12 +41,16 @@ const arrDestinations = [{
         image: "ice.jpeg",
         addedDate: "2023-05-03",
         destinations: "multiple",
-        origin: "Antarctica"
+        origin: "Antarctica",
+        code:"#6216",
+        ticketQuantity:"1"
     }
 ];
 
 let appliedFilter = "all"; // Default to "all" destinations
 let appliedSort = "date";  // Default to sorting by date added
+
+
 
 
 function renderCards() {
@@ -151,7 +161,7 @@ function loadCruises(cruisesToShow) {
 
     $("#cruiseContainer").empty();
 
-//loop throught the list of plants
+
 for (let i = 0; i < cruisesToShow.length; i++) {
     const cruise = cruisesToShow[i];
 
@@ -161,6 +171,30 @@ for (let i = 0; i < cruisesToShow.length; i++) {
 
 }
 }
+
+//local storage
+$(document).ready(function() {
+    $(".purchase-button").click(function() {
+        const card = $(this).closest(".card");
+        const title = card.find(".card-title").text();
+        const price = card.find("#pricetext").text();
+
+        const selectedTrip = {
+            title: title,
+            price: price
+            // Add other trip information here
+        };
+
+        localStorage.setItem("selectedTrip", JSON.stringify(selectedTrip));
+        window.location.href = "purchase.html"; // Change to your purchase page's URL
+    });
+
+    // ... (other code)
+});
+
+  
+  
+
 
 
 //PURCHASES TABLE//
@@ -183,6 +217,23 @@ $(document).ready(function() {
       $("tr").hide(); // Hide all table rows
     });
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const purchaseButtons = document.querySelectorAll("#purchase");
+  
+    purchaseButtons.forEach(function (button, index) {
+      button.addEventListener("click", function () {
+        // ... (your existing code to extract trip information)
+        
+        // Display purchase successful message
+        window.alert("Purchase successful! Thank you for choosing our trip.");
+        
+        // Store the trip information in localStorage
+        localStorage.setItem(`trip${index}`, JSON.stringify(tripInfo));
+      });
+    });
+  });
+  
 //------------------------------//
 
 

@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="styles/main.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/purchase.js"></script>
   </head>
   <body>
 
@@ -41,38 +41,28 @@
       </nav>
     <!-- Table -->
 
-    <table class="table">
+    <table id="purchaseTable" class="table">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Plant</th>
-          <th scope="col">Name</th>
-          <th scope="col">Remove?</th>
+          <th>Trip Code</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Ticket Quantity</th>
+          <th>Total Cost</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr id="one">
-          <th scope="row">1</th>
-          <td class="ficus" id="image1"> <img src="assets/plant.png"></td>
-          <td>Ficus</td>
-          <td><button id="removeone">Remove</button></td>
-        </tr>
-        <tr id="two">
-          <th scope="row">2</th>
-          <td class="snake"id="image2"><img src="assets/snake plant.jpeg"></td>
-          <td>snake plant</td>
-          <td><button id="removetwo">Remove</button></td>
-        </tr>
-        <tr id="three">
-          <th scope="row">3</th>
-          <td class="venus" id="image3"><img src="assets/venus fly trap.webp"></td>
-          <td>venus fly trap</td>
-          <td><button id="removethree">Remove</button></td>
-        </tr>
+     
       </tbody>
-
     </table>
+    
+    
+    
+
+    
 
     <button class="remove" id="removeAll">Remove All</button>
+    <button class="remove" id="purchase">Purchase</button>
 
   </body>
